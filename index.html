@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fumiko Poko - Welcome to my shop</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Slackey&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* เปลี่ยนเป็นโทนม่วงพาสเทลตามสั่ง */
+            --color-pink-bg: #f3eeff;
+            --color-pink-dot: #ffffff;
+            --color-pink-dark: #b194ff;
+            --color-pink-light: #d8ccff;
+            --color-brown-dark: #3d2b52;
+            --color-brown-light: #63507a;
+        }
+
+        body {
+            font-family: 'Mitr', sans-serif;
+            background-color: var(--color-pink-bg);
+            background-image: radial-gradient(var(--color-pink-dot) 15%, transparent 16%), radial-gradient(var(--color-pink-dot) 15%, transparent 16%);
+            background-size: 24px 24px;
+            background-position: 0 0, 12px 12px;
+            color: var(--color-brown-dark);
+            scroll-behavior: smooth;
+        }
+
+        .font-slackey {
+            font-family: 'Slackey', 'Mitr', cursive;
+        }
+
+        .text-shadow-cute {
+            text-shadow: 2px 2px 0px #fff, 3px 3px 0px var(--color-pink-light);
+        }
+
+        .clean-box {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 40px;
+            box-shadow: 0 10px 40px rgba(177, 148, 255, 0.15);
+        }
+
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--color-pink-bg); }
+        ::-webkit-scrollbar-thumb { background: var(--color-pink-dark); border-radius: 10px; }
+
+        .modal-enter { animation: modalFadeIn 0.3s ease-out forwards; }
+        .modal-exit { animation: modalFadeOut 0.2s ease-in forwards; }
+        
+        @keyframes modalFadeIn { from { opacity: 0; transform: scale(0.95); } to { opacity: 1; transform: scale(1); } }
+        @keyframes modalFadeOut { from { opacity: 1; transform: scale(1); } to { opacity: 0; transform: scale(0.95); } }
+
+        .slider-track { display: flex; transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1); }
+        .slide { min-width: 100%; }
+    </style>
+</head>
+<body class="min-h-screen pb-12">
+
+    <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
+
+    <div id="side-menu" class="fixed inset-y-0 left-0 w-64 bg-white/95 backdrop-blur-md shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out border-r border-purple-200">
+        <div class="p-5 h-full flex flex-col">
+            <div class="flex justify-between items-center mb-6 border-b border-purple-100 pb-4">
+                <span class="font-slackey text-xl text-[#b194ff] text-shadow-cute">MENU</span>
+                <button onclick="toggleMenu()" class="text-purple-300 hover:text-purple-500 bg-purple-50 p-1 rounded-full transition">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+                </button>
+            </div>
+            <div class="space-y-3 font-medium text-[#3d2b52] flex-1">
+                <a href="#services" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-purple-50 rounded-xl transition text-[15px]">
+                    <span class="text-[#b194ff]"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.6H22l-6.2 4.5 2.4 7.6-6.2-4.5-6.2 4.5 2.4-7.6-6.2-4.5h7.6z"/></svg></span> บริการของเรา
+                </a>
+                <a href="#portfolio" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-purple-50 rounded-xl transition text-[15px]">
+                    <span class="text-[#b194ff]"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/></svg></span> ผลงานร้าน
+                </a>
+                <a href="#contact" onclick="toggleMenu()" class="flex items-center gap-3 p-3 hover:bg-purple-50 rounded-xl transition text-[15px]">
+                    <span class="text-[#b194ff]"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg></span> ติดต่อสอบถาม
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full bg-white/90 backdrop-blur-md border-b border-purple-200 py-3 px-4 flex justify-between items-center text-[10px] sm:text-xs font-slackey text-purple-400 font-medium uppercase tracking-wider sticky top-0 z-30 shadow-sm">
+        <div class="flex items-center gap-2 sm:gap-3">
+            <button onclick="toggleMenu()" class="p-1.5 hover:bg-purple-100 rounded-md text-purple-500 transition-colors focus:outline-none cursor-pointer">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+            <span>FUMIKO POKO ></span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="flex items-center gap-1">NO COPY</span>
+            <span class="hidden sm:inline border-l border-purple-200 pl-4">READY FOR ORDERS</span>
+        </div>
+    </div>
