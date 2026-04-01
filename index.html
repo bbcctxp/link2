@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300;400;500;600&family=Slackey&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* เปลี่ยนเป็นโทนม่วงพาสเทลตามสั่ง */
             --color-pink-bg: #f3eeff;
             --color-pink-dot: #ffffff;
             --color-pink-dark: #b194ff;
@@ -58,7 +57,6 @@
         .slide { min-width: 100%; }
     </style>
 </head>
-
 <body class="min-h-screen pb-12">
 
     <div id="menu-overlay" onclick="toggleMenu()" class="fixed inset-0 bg-black/30 backdrop-blur-sm z-40 hidden opacity-0 transition-opacity duration-300"></div>
@@ -114,3 +112,160 @@
             </div>
         </header>
 
+        <section id="services" class="space-y-6">
+            <h2 class="font-slackey text-2xl md:text-3xl text-center text-[#b194ff] text-shadow-cute mb-8 flex items-center justify-center gap-3">
+                <span class="w-10 h-0.5 bg-purple-100 rounded-full"></span>SERVICES<span class="w-10 h-0.5 bg-purple-100 rounded-full"></span>
+            </h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="clean-box p-6 border-l-4 border-[#b194ff] space-y-3 group hover:border-[#63507a] transition-all duration-300">
+                    <div class="flex items-center gap-4 pb-3 border-b border-purple-100">
+                        <div class="text-4xl">🎨</div>
+                        <h3 class="font-bold text-lg text-[#3d2b52]">รับทำป้าย</h3>
+                    </div>
+                    <p class="text-sm text-[#63507a] leading-relaxed">รับทำป้ายเร่งด่วน ราคาถูก คมชัดทุกงาน มีแบบให้เลือกเยอะ.</p>
+                </div>
+
+                <div class="clean-box p-6 border-l-4 border-[#b194ff] space-y-3 group hover:border-[#63507a] transition-all duration-300">
+                    <div class="flex items-center gap-4 pb-3 border-b border-purple-100">
+                        <div class="text-4xl">📦</div>
+                        <h3 class="font-bold text-lg text-[#3d2b52]">รับทำบล็อก</h3>
+                    </div>
+                    <p class="text-sm text-[#63507a] leading-relaxed">บล็อกโชว์ผลงานครบวงจร จัดวางสวยงาม ใช้งานง่าย.</p>
+                </div>
+
+                <div class="clean-box p-6 border-l-4 border-[#b194ff] space-y-3 group hover:border-[#63507a] transition-all duration-300">
+                    <div class="flex items-center gap-4 pb-3 border-b border-purple-100">
+                        <div class="text-4xl">💡</div>
+                        <h3 class="font-bold text-lg text-[#3d2b52]">รับร่างบล็อก</h3>
+                    </div>
+                    <p class="text-sm text-[#63507a] leading-relaxed">รับวางแผน ออกแบบโครงสร้างบล็อก และเนื้อหาให้เหมาะสมกับคุณ.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="space-y-6">
+            <h2 class="font-slackey text-2xl md:text-3xl text-center text-[#b194ff] text-shadow-cute mb-8 flex items-center justify-center gap-3">
+                <span class="w-10 h-0.5 bg-purple-100 rounded-full"></span>PORTFOLIO<span class="w-10 h-0.5 bg-purple-100 rounded-full"></span>
+            </h2>
+            <div class="relative overflow-hidden clean-box p-3 sm:p-5 border border-purple-100 shadow-purple-200/30">
+                <div id="slider-track" class="slider-track gap-2 sm:gap-4 p-1">
+                    <div class="slide aspect-[16/10] bg-purple-100 rounded-2xl overflow-hidden shadow-inner border border-purple-200 flex items-center justify-center">
+                        <span class="text-purple-300 text-sm">ตัวอย่างผลงาน 1</span>
+                    </div>
+                    <div class="slide aspect-[16/10] bg-purple-100 rounded-2xl overflow-hidden shadow-inner border border-purple-200 flex items-center justify-center">
+                        <span class="text-purple-300 text-sm">ตัวอย่างผลงาน 2</span>
+                    </div>
+                    <div class="slide aspect-[16/10] bg-purple-100 rounded-2xl overflow-hidden shadow-inner border border-purple-200 flex items-center justify-center">
+                        <span class="text-purple-300 text-sm">ตัวอย่างผลงาน 3</span>
+                    </div>
+                </div>
+                <button onclick="moveSlider(-1)" class="absolute left-6 top-1/2 -translate-y-1/2 bg-white/90 p-2.5 rounded-full text-purple-400 hover:text-[#b194ff] shadow-md transition backdrop-blur-sm focus:outline-none">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+                </button>
+                <button onclick="moveSlider(1)" class="absolute right-6 top-1/2 -translate-y-1/2 bg-white/90 p-2.5 rounded-full text-purple-400 hover:text-[#b194ff] shadow-md transition backdrop-blur-sm focus:outline-none">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+                </button>
+            </div>
+            <div class="flex justify-center gap-3 pt-6 flex-wrap">
+                <button onclick="openModal('toon')" class="clean-box px-6 py-3 text-xs sm:text-sm font-medium text-[#3d2b52] hover:bg-purple-50 border border-purple-100 transition shadow-sm hover:shadow-purple-100 flex items-center gap-2">
+                    ตูน Select Toon <span class="text-[#b194ff]">→</span>
+                </button>
+                <button onclick="openModal('sign')" class="clean-box px-6 py-3 text-xs sm:text-sm font-medium text-[#3d2b52] hover:bg-purple-50 border border-purple-100 transition shadow-sm hover:shadow-purple-100 flex items-center gap-2">
+                    ป้าย Ex. Sign work <span class="text-[#b194ff]">→</span>
+                </button>
+                <button onclick="openModal('block')" class="clean-box px-6 py-3 text-xs sm:text-sm font-medium text-[#3d2b52] hover:bg-purple-50 border border-purple-100 transition shadow-sm hover:shadow-purple-100 flex items-center gap-2">
+                    บล็อก Ex. Block Draft <span class="text-[#b194ff]">→</span>
+                </button>
+            </div>
+        </section>
+
+        <section id="contact" class="clean-box p-8 border border-purple-100 space-y-6 text-center shadow-purple-100/30">
+            <h2 class="font-slackey text-2xl md:text-3xl text-[#b194ff] text-shadow-cute mb-3">CONTACT US</h2>
+            <p class="text-[15px] sm:text-base text-[#63507a] max-w-lg mx-auto leading-relaxed">
+                สนใจหรือสอบถามรายละเอียดเพิ่มเติมได้ที่ <strong class="text-[#3d2b52]">Fumiko Poko</strong> ได้เลยน้าา ยินดีให้บริการค่าา.
+            </p>
+            <div class="flex items-center justify-center gap-3 pt-3 flex-wrap">
+                <a href="https://line.me/R/ti/p/@641sfkjr" target="_blank" class="bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-medium px-8 py-3.5 rounded-full transition-all duration-300 shadow-md hover:shadow-lg flex items-center gap-2.5">
+                    LINE Official →
+                </a>
+                <a href="https://www.facebook.com/fumiko.poko?" target="_blank" class="bg-white hover:bg-purple-50 text-emerald-600 text-sm font-medium px-8 py-3.5 rounded-full transition border border-purple-100 flex items-center gap-2.5 shadow-sm">
+                    Facebook Inbox →
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="text-center py-8 px-4 mt-8 border-t border-purple-100/70">
+        <p class="text-xs text-purple-300/80 font-medium uppercase tracking-widest font-slackey">Fumiko Poko</p>
+        <p class="text-[11px] text-[#8e7a99] mt-2 leading-relaxed opacity-70">
+            กราฟิกดีไซน์ ตูน ป้าย บล็อกร่าง <br>
+            All rights reserved. © 2024
+        </p>
+    </footer>
+
+    <div id="modal" class="fixed inset-0 bg-black/50 z-50 backdrop-blur-sm hidden flex items-center justify-center p-4">
+        <div id="modal-content" class="clean-box w-full max-w-xl bg-white p-6 sm:p-8 relative border border-purple-100">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-purple-200 hover:text-purple-400 bg-purple-50 p-1 rounded-full transition focus:outline-none">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+            <h3 id="modal-title" class="font-bold text-xl text-[#3d2b52] mb-5 border-b border-purple-100 pb-3 pr-8"></h3>
+            <div class="h-80 bg-purple-100 rounded-2xl overflow-hidden shadow-inner border border-purple-200 flex items-center justify-center mb-6">
+                <span id="modal-img-placeholder" class="text-purple-300 text-sm">IMAGE PLACEHOLDER</span>
+            </div>
+            <a id="modal-link" href="#" target="_blank" class="block w-full text-center bg-[#b194ff] hover:bg-[#a184ef] text-white text-sm font-medium px-8 py-3.5 rounded-xl transition shadow-md shadow-purple-100">
+                ดูผลงานเต็มๆ บน Google Drive →
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const sideMenu = document.getElementById('side-menu');
+            const menuOverlay = document.getElementById('menu-overlay');
+            sideMenu.classList.toggle('-translate-x-full');
+            menuOverlay.classList.toggle('hidden');
+            setTimeout(() => menuOverlay.classList.toggle('opacity-0'), 10);
+        }
+
+        let currentSlide = 0;
+        function moveSlider(direction) {
+            const track = document.getElementById('slider-track');
+            const slides = document.querySelectorAll('.slide');
+            const slideWidth = slides[0].offsetWidth + (parseFloat(getComputedStyle(track).gap) || 0);
+            currentSlide = (currentSlide + direction + slides.length) % slides.length;
+            track.style.transform = `translateX(-${currentSlide * slideWidth}px)`;
+        }
+
+        const modalData = {
+            toon: { title: "ผลงานตูน Select Toon", drive: "https://linkbio.co/fumikopoko" },
+            sign: { title: "ผลงานป้าย Ex. Sign work", drive: "https://drive.google.com/drive/folders/1-2hTMdBqNtQu01wz9I42MaHVjOGk6JgB" },
+            block: { title: "ผลงานบล็อก Ex. Block Draft", drive: "#" }
+        };
+
+        function openModal(id) {
+            const data = modalData[id];
+            if (!data) return;
+            document.getElementById('modal-title').innerText = data.title;
+            document.getElementById('modal-link').href = data.drive;
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            modal.classList.remove('hidden');
+            content.classList.add('modal-enter');
+            content.classList.remove('modal-exit');
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            const content = document.getElementById('modal-content');
+            content.classList.remove('modal-enter');
+            content.classList.add('modal-exit');
+            setTimeout(() => { modal.classList.add('hidden'); }, 200);
+        }
+
+        window.onclick = function(event) {
+            const modal = document.getElementById('modal');
+            if (event.target == modal) { closeModal(); }
+        }
+    </script>
+</body>
+</html>
